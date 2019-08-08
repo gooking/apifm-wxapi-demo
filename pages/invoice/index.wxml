@@ -1,0 +1,4 @@
+<button type="primary" bindtap="goRegist"> 注册 / 登录 </button>
+<button type="warn" bindtap="invoiceList"> 我的申请开发票记录 </button>
+<button type="warn" bindtap="invoiceApply"> 申请开发票 </button>
+<button type="warn" bindtap="invoiceDetail"> 申请记录详情 </button>

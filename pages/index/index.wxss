@@ -1,0 +1,15 @@
+.page {
+  margin-top:10rpx;
+}
+navigator {
+  height: 180rpx;  
+  text-align: center;
+}
+navigator text {
+  display: block;
+  font-size: 14px;
+}
+.container text {
+  color:red;
+  font-weight: bold;
+}

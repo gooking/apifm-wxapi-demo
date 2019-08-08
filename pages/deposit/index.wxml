@@ -1,0 +1,5 @@
+<button type="primary" bindtap="goRegist"> 注册 / 登录 </button>
+<button type="warn" bindtap="depositList"> 读取所有的押金记录 </button>
+<button type="warn" bindtap="payDeposit"> 支付押金 </button>
+<button type="warn" bindtap="depositInfo"> 押金详情 </button>
+<button type="warn" bindtap="depositBackApply"> 申请退还押金 </button>

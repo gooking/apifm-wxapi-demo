@@ -1,0 +1,3 @@
+<button type="primary" open-type="getUserInfo" bindgetuserinfo="register_simple">简易注册</button>
+<button type="primary" open-type="getUserInfo" bindgetuserinfo="register_complex">详细注册</button>
+<button type="warn" bindtap="goLogin">登录</button>

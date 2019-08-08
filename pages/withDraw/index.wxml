@@ -1,0 +1,4 @@
+<button type="primary" bindtap="goRegist"> 注册 / 登录 </button>
+<button type="warn" bindtap="withDrawLogs"> 我的提现记录 </button>
+<button type="warn" bindtap="withDrawApply"> 申请提现 </button>
+<button type="warn" bindtap="withDrawDetail"> 提现记录详情 </button>

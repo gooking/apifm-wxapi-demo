@@ -1,0 +1,58 @@
+<view class="container">
+  <text>本案例运行结果</text>
+  <text>请查看控制台(console)打印输出</text>
+</view>
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-grids">
+      <navigator url="/pages/banner/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>Banner</text>
+        <text>轮播图</text>
+      </navigator>
+      <navigator url="/pages/comment/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>留言</text>
+        <text>评论</text>
+      </navigator>
+      <navigator url="/pages/auth/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>注册</text>
+        <text>登录</text>
+      </navigator>
+      <navigator url="/pages/config/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>系统参数</text>
+        <text>系统配置</text>
+      </navigator>
+      <navigator url="/pages/notice/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>公告</text>
+        <text>通知</text>
+      </navigator>
+      <navigator url="/pages/friendly-partner/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>合作伙伴</text>
+        <text>友情链接</text>
+      </navigator>
+      <navigator url="/pages/tools/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>通用接口</text>
+        <text>工具类</text>
+      </navigator>
+      <navigator url="/pages/luckyInfo/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>实时抽奖</text>
+        <text>到期开奖</text>
+      </navigator>
+      <navigator url="/pages/asset/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>用户资产</text>
+        <text>资金流水</text>
+      </navigator>
+      <navigator url="/pages/deposit/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>押金管理</text>
+        <text>可押可退</text>
+      </navigator>
+      <navigator url="/pages/invoice/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>发票管理</text>
+        <text>自助申请</text>
+      </navigator>
+      <navigator url="/pages/withDraw/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>提现管理</text>
+        <text>提现记录</text>
+      </navigator>
+    </view>
+  </view>
+</view>
