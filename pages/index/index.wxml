@@ -53,6 +53,10 @@
         <text>提现管理</text>
         <text>提现记录</text>
       </navigator>
+      <navigator url="/pages/cmsCategory/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>文章分类</text>
+        <text>无极分类</text>
+      </navigator>
     </view>
   </view>
 </view>

@@ -1,0 +1,2 @@
+<button type="warn" bindtap="cmsCategories"> 获取所有文章分类 </button>
+<button type="warn" bindtap="cmsCategoryDetail"> 分类详情 </button>

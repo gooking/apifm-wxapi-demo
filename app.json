@@ -12,7 +12,8 @@
     "pages/asset/index",
     "pages/deposit/index",
     "pages/invoice/index",
-    "pages/withDraw/index"
+    "pages/withDraw/index",
+    "pages/cmsCategory/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
