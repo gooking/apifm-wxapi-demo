@@ -521,10 +521,23 @@ module.exports = {
   cmsArticles: function cmsArticles(data) {
     return request('/cms/news/list', true, 'post', data);
   },
+  cmsArticleUsefulLogs: function cmsArticleUsefulLogs(data) {
+    return request('/cms/news/useful/logs', true, 'post', data);
+  },
   cmsArticleDetail: function cmsArticleDetail(id) {
-    return request('/cms/news/detail', true, 'get', {
-      id: id
-    });
+    return request('/cms/news/detail', true, 'get', { id: id });
+  },
+  cmsArticlePreNext: function cmsArticlePreNext(id) {
+    return request('/cms/news/preNext', true, 'get', { id: id });
+  },
+  cmsArticleCreate: function cmsArticleCreate(data) {
+    return request('/cms/news/put', true, 'post', data);
+  },
+  cmsArticleDelete: function cmsArticleDelete(token, id) {
+    return request('/cms/news/del', true, 'post', { token: token, id: id });
+  },
+  cmsArticleUseless: function cmsArticleUseless(data) {
+    return request('/cms/news/useful', true, 'post', data);
   },
   invoiceList: function invoiceList(data) {
     return request('/invoice/list', true, 'post', data);

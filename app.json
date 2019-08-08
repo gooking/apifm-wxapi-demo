@@ -13,7 +13,8 @@
     "pages/deposit/index",
     "pages/invoice/index",
     "pages/withDraw/index",
-    "pages/cmsCategory/index"
+    "pages/cmsCategory/index",
+    "pages/cmsArticle/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

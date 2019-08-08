@@ -57,6 +57,10 @@
         <text>文章分类</text>
         <text>无极分类</text>
       </navigator>
+      <navigator url="/pages/cmsArticle/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>文章/动态</text>
+        <text>博文/新闻/资讯</text>
+      </navigator>
     </view>
   </view>
 </view>

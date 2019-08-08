@@ -1,0 +1,9 @@
+<button type="primary" bindtap="goRegist"> 注册 / 登录 </button>
+
+<button type="warn" bindtap="cmsArticles"> 获取所有文章 </button>
+<button type="warn" bindtap="cmsArticleDetail"> 文章详情 </button>
+<button type="warn" bindtap="cmsArticlePreNext"> 上一篇 / 下一篇 </button>
+<button type="warn" bindtap="cmsArticleUseless"> 点赞 / 点踩 </button>
+<button type="warn" bindtap="cmsArticleUsefulLogs"> 赞/踩 记录明细 </button>
+<button type="warn" bindtap="cmsArticleCreate"> 发布文章 / 投稿 </button>
+<button type="warn" bindtap="cmsArticleDelete"> 删除自己发布的文章 </button>
