@@ -1,0 +1,19 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells__title">商品条码查询</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell ">
+        <view class="weui-cell__hd">
+          <view class="weui-label">条码</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请输入条码" bindinput="barcodeChange" />
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" bindtap="queryBarcode">查询</button>
+    </view>
+  </view>
+</view>

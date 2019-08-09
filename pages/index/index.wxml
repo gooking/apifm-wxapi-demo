@@ -69,6 +69,10 @@
         <text>关键词列表</text>
         <text>类似“标签云”</text>
       </navigator>
+      <navigator url="/pages/barcode/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>商品条码</text>
+        <text>条码查询</text>
+      </navigator>
     </view>
   </view>
 </view>

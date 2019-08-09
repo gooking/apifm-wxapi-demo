@@ -1,2 +1,2 @@
-<!--pages/tools/index.wxml-->
-<text>pages/tools/index.wxml</text>
+<button type="warn" bindtap="uniqueId"> 获取分布式系统唯一ID </button>
+<button type="warn" bindtap="goQueryBarcode"> 商品条形码识别 </button>

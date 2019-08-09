@@ -586,6 +586,11 @@ module.exports = {
 
     return request('/uniqueId/get', true, 'get', { type: type });
   },
+  queryBarcode: function queryBarcode() {
+    var barcode = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+    return request('/barcode/info', true, 'get', { barcode: barcode });
+  },
   luckyInfo: function luckyInfo(id) {
     return request('/luckyInfo/info', true, 'get', { id: id });
   },

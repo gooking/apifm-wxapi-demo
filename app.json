@@ -16,7 +16,8 @@
     "pages/cmsCategory/index",
     "pages/cmsArticle/index",
     "pages/page/index",
-    "pages/tags/index"
+    "pages/tags/index",
+    "pages/barcode/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

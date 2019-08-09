@@ -6,9 +6,27 @@ Page({
 
   },
   onLoad: function (options) {
-    // 获取分布式系统唯一ID
+
+  },
+  uniqueId(){
     WXAPI.uniqueId().then(res => {
-      console.log('分布式系统唯一ID：', res.data)
+      if (res.code == 0) {
+        wx.showModal({
+          title: '成功',
+          content: 'ID:' + res.data,
+          showCancel: false
+        })
+      } else {
+        wx.showToast({
+          title: res.msg,
+          icon: 'none'
+        })
+      }
+    })
+  },
+  goQueryBarcode(){
+    wx.navigateTo({
+      url: '/pages/barcode/index'
     })
   }
 })
