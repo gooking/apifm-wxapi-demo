@@ -15,7 +15,8 @@
     "pages/withDraw/index",
     "pages/cmsCategory/index",
     "pages/cmsArticle/index",
-    "pages/page/index"
+    "pages/page/index",
+    "pages/tags/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

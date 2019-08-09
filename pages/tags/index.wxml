@@ -1,0 +1,1 @@
+<button type="warn" bindtap="cmsTags"> 获取所有标签列表 </button>

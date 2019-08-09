@@ -65,6 +65,10 @@
         <text>单页信息</text>
         <text>关于/联系我们</text>
       </navigator>
+      <navigator url="/pages/tags/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>关键词列表</text>
+        <text>类似“标签云”</text>
+      </navigator>
     </view>
   </view>
 </view>
