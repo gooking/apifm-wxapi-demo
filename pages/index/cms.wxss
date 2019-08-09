@@ -1,0 +1,8 @@
+navigator {
+  height: 180rpx;  
+  text-align: center;
+}
+navigator text {
+  display: block;
+  font-size: 14px;
+}

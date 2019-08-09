@@ -9,9 +9,9 @@
         <text>Banner</text>
         <text>轮播图</text>
       </navigator>
-      <navigator url="/pages/comment/index" class="weui-grid" hover-class="weui-grid_activer">
-        <text>留言</text>
-        <text>评论</text>
+      <navigator url="/pages/index/cms" class="weui-grid" hover-class="weui-grid_activer">
+        <text>CMS</text>
+        <text>模块</text>
       </navigator>
       <navigator url="/pages/auth/index" class="weui-grid" hover-class="weui-grid_activer">
         <text>注册</text>
@@ -20,14 +20,6 @@
       <navigator url="/pages/config/index" class="weui-grid" hover-class="weui-grid_activer">
         <text>系统参数</text>
         <text>系统配置</text>
-      </navigator>
-      <navigator url="/pages/notice/index" class="weui-grid" hover-class="weui-grid_activer">
-        <text>公告</text>
-        <text>通知</text>
-      </navigator>
-      <navigator url="/pages/friendly-partner/index" class="weui-grid" hover-class="weui-grid_activer">
-        <text>合作伙伴</text>
-        <text>友情链接</text>
       </navigator>
       <navigator url="/pages/tools/index" class="weui-grid" hover-class="weui-grid_activer">
         <text>通用接口</text>
@@ -53,25 +45,13 @@
         <text>提现管理</text>
         <text>提现记录</text>
       </navigator>
-      <navigator url="/pages/cmsCategory/index" class="weui-grid" hover-class="weui-grid_activer">
-        <text>文章分类</text>
-        <text>无极分类</text>
-      </navigator>
-      <navigator url="/pages/cmsArticle/index" class="weui-grid" hover-class="weui-grid_activer">
-        <text>文章/动态</text>
-        <text>博文/新闻/资讯</text>
-      </navigator>
-      <navigator url="/pages/page/index" class="weui-grid" hover-class="weui-grid_activer">
-        <text>单页信息</text>
-        <text>关于/联系我们</text>
-      </navigator>
-      <navigator url="/pages/tags/index" class="weui-grid" hover-class="weui-grid_activer">
-        <text>关键词列表</text>
-        <text>类似“标签云”</text>
-      </navigator>
       <navigator url="/pages/barcode/index" class="weui-grid" hover-class="weui-grid_activer">
         <text>商品条码</text>
         <text>条码查询</text>
+      </navigator>
+      <navigator url="/pages/region/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>省市区数据</text>
+        <text>最新行政区数据</text>
       </navigator>
     </view>
   </view>

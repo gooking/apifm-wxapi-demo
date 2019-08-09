@@ -3,7 +3,8 @@ WXAPI.init('gooking')
 
 Page({
   data: {
-    barcode: undefined
+    barcode: undefined,
+    queryResult: undefined,
   },
   onLoad: function (options) {
 
@@ -12,7 +13,10 @@ Page({
 
   },
   barcodeChange(e){
-    this.data.barcode = e.detail.value
+    this.setData({
+      barcode: e.detail.value,
+      queryResult: null
+    })
   },
   queryBarcode() { // 查询条码
     if (!this.data.barcode){
@@ -28,6 +32,9 @@ Page({
         wx.showToast({
           title: '查询成功',
           icon: 'success'
+        })
+        this.setData({
+          queryResult: res.data
         })
       } else {
         wx.showToast({

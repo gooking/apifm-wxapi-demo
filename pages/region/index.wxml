@@ -1,0 +1,58 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells__title">选择</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+          <view class="weui-label">省份</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker bindchange="provinceChange" value="{{pIndex}}" range="{{provinces}}" range-key="name">
+            <view class="weui-select weui-select_in-select-after">{{provinces[pIndex].name}}</view>
+          </picker>
+        </view>
+      </view>
+      <view wx:if="{{cities}}" class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+          <view class="weui-label">城市</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker bindchange="cityChange" value="{{cIndex}}" range="{{cities}}" range-key="name">
+            <view class="weui-select weui-select_in-select-after">{{cities[cIndex].name}}</view>
+          </picker>
+        </view>
+      </view>
+      <view wx:if="{{areas}}" class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+          <view class="weui-label">区县</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker bindchange="areaChange" value="{{aIndex}}" range="{{areas}}" range-key="name">
+            <view class="weui-select weui-select_in-select-after">{{areas[aIndex].name}}</view>
+          </picker>
+        </view>
+      </view>
+      <view wx:if="{{streets}}" class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+          <view class="weui-label">街道/镇</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker bindchange="streetChange" value="{{sIndex}}" range="{{streets}}" range-key="name">
+            <view class="weui-select weui-select_in-select-after">{{streets[sIndex].name}}</view>
+          </picker>
+        </view>
+      </view>
+      <view wx:if="{{communities}}" class="weui-cell weui-cell_select">
+        <view class="weui-cell__hd weui-cell__hd_in-select-after">
+          <view class="weui-label">社区/村委会</view>
+        </view>
+        <view class="weui-cell__bd">
+          <picker bindchange="communityChange" value="{{ccIndex}}" range="{{communities}}" range-key="name">
+            <view class="weui-select weui-select_in-select-after">{{communities[ccIndex].name}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

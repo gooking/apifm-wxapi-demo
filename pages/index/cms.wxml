@@ -1,0 +1,34 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-grids">
+      <navigator url="/pages/cmsCategory/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>文章分类</text>
+        <text>无极分类</text>
+      </navigator>
+      <navigator url="/pages/cmsArticle/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>文章/动态</text>
+        <text>博文/新闻/资讯</text>
+      </navigator>
+      <navigator url="/pages/page/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>单页信息</text>
+        <text>关于/联系我们</text>
+      </navigator>
+      <navigator url="/pages/tags/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>关键词列表</text>
+        <text>类似“标签云”</text>
+      </navigator>
+      <navigator url="/pages/comment/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>留言</text>
+        <text>评论</text>
+      </navigator>
+      <navigator url="/pages/notice/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>公告</text>
+        <text>通知</text>
+      </navigator>
+      <navigator url="/pages/friendly-partner/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>合作伙伴</text>
+        <text>友情链接</text>
+      </navigator>
+    </view>
+  </view>
+</view>

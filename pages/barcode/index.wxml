@@ -12,6 +12,14 @@
       </view>
     </view>
 
+    <view wx:if="{{queryResult}}" class="weui-cells__title">查询结果</view>
+    <view wx:if="{{queryResult}}" class="weui-cells weui-cells_after-title">
+      <view wx:for="{{queryResult}}" wx:key="*this" wx:for-index="key" class="weui-cell">
+        <view class="weui-cell__bd">{{ key }}</view>
+        <view class="weui-cell__ft">{{ item }}</view>
+      </view>
+    </view>
+
     <view class="weui-btn-area">
       <button class="weui-btn" type="primary" bindtap="queryBarcode">查询</button>
     </view>

@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/index/cms",
     "pages/banner/index",
     "pages/comment/index",
     "pages/auth/index",
@@ -17,7 +18,8 @@
     "pages/cmsArticle/index",
     "pages/page/index",
     "pages/tags/index",
-    "pages/barcode/index"
+    "pages/barcode/index",
+    "pages/region/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
