@@ -61,6 +61,10 @@
         <text>文章/动态</text>
         <text>博文/新闻/资讯</text>
       </navigator>
+      <navigator url="/pages/page/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>单页信息</text>
+        <text>关于/联系我们</text>
+      </navigator>
     </view>
   </view>
 </view>

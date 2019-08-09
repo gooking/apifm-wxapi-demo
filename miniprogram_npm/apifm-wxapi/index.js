@@ -539,6 +539,9 @@ module.exports = {
   cmsArticleUseless: function cmsArticleUseless(data) {
     return request('/cms/news/useful', true, 'post', data);
   },
+  cmsPage: function cmsPage(key) {
+    return request('/cms/page/info', true, 'get', { key: key });
+  },
   invoiceList: function invoiceList(data) {
     return request('/invoice/list', true, 'post', data);
   },

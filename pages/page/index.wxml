@@ -1,0 +1,5 @@
+<button type="warn" bindtap="getContent" data-key="aboutUs"> 关于我们 </button>
+<button type="warn" bindtap="getContent" data-key="contactUs"> 联系我们 </button>
+<button type="warn" bindtap="getContent" data-key="culture"> 企业文化 </button>
+<button type="warn" bindtap="getContent" data-key="leader"> 领导介绍 </button>
+<button type="warn" bindtap="getContent" data-key="organization"> 组织结构 </button>
