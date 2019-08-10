@@ -57,6 +57,10 @@
         <text>文件系统</text>
         <text>上传/下载/管理</text>
       </navigator>
+      <navigator url="/pages/json/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>Json数据云存储</text>
+        <text>自定义数据格式</text>
+      </navigator>
     </view>
   </view>
 </view>

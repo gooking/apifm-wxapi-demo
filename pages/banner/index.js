@@ -14,5 +14,11 @@ Page({
         })
       }
     })
+  },
+  onShow(){
+    wx.showToast({
+      title: '左右滑动',
+      icon: 'none'
+    })
   }
 })

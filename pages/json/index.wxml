@@ -1,0 +1,29 @@
+<button type="primary" bindtap="goRegist"> 注册 / 登录 </button>
+<text class="trip">利用 json 接口，制作一个每日说说的案例</text>
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell ">
+        <view class="weui-cell__bd">
+          <input class="weui-input" value="{{inputvalue}}" placeholder="今日你想说点什么" bindinput="inputChange" />
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="warn" bindtap="jsonSet">提交</button>
+    </view>
+
+    <view class="weui-cells__title">往日动弹:</view>
+    <view wx:if="{{jsonList}}" class="weui-cells weui-cells_after-title">
+      <view wx:for="{{jsonList}}" wx:key="*this" class="weui-cell">
+        <view class="weui-cell__bd">
+        {{ item.jsonData.msg }}
+        <view class="weui-badge" style="margin-left: 5px;">{{ item.dateAdd }}</view>
+        </view>
+        <view class="weui-cell__ft" bindtap="jsonDelete" data-id="{{ item.id }}">删除</view>
+      </view>
+    </view>
+
+  </view>
+</view>

@@ -613,6 +613,18 @@ module.exports = {
   },
   luckyInfoJoinLogs: function luckyInfoJoinLogs(data) {
     return request('/luckyInfo/join/logs', true, 'post', data);
+  },
+  jsonList: function jsonList(data) {
+    return request('/json/list', true, 'post', data);
+  },
+  jsonSet: function jsonSet(data) {
+    return request('/json/set', true, 'post', data);
+  },
+  jsonDelete: function jsonDelete() {
+    var token = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+    var id = arguments[1];
+
+    return request('/json/delete', true, 'post', { token: token, id: id });
   }
 };
 

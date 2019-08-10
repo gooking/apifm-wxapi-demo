@@ -1,0 +1,17 @@
+button {
+  width:600rpx;
+}
+.trip {
+  color:red;
+  text-align: center;
+  display: block;
+  margin-top:20rpx;
+  margin-bottom:20rpx;
+}
+.weui-btn-area {
+  margin-top:20rpx;
+}
+.weui-cell__ft {
+  color:red;
+  font-size:14px;
+}

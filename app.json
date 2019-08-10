@@ -20,7 +20,8 @@
     "pages/tags/index",
     "pages/barcode/index",
     "pages/region/index",
-    "pages/dfs/index"
+    "pages/dfs/index",
+    "pages/json/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
