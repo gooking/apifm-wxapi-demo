@@ -1,0 +1,44 @@
+<button type="primary" bindtap="goRegist"> 注册 / 登录 </button>
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">
+          <view class="weui-uploader">
+            <view class="weui-uploader__hd">
+              <view class="weui-uploader__overview">
+                <view class="weui-uploader__title">图片上传</view>
+              </view>
+              <view class="weui-uploader__tips">
+                上传提示
+              </view>
+            </view>
+            <view class="weui-uploader__bd">
+              <view class="weui-uploader__files" id="uploaderFiles">
+                <view wx:for="{{piclists}}" wx:key="*this" class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                  <image class="weui-uploader__img" src="https://dcdn.it120.cc/{{item.key}}" mode="aspectFill" />
+                </view>
+              </view>
+              <view class="weui-uploader__input-box">
+                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-cells__title">远程下载图片</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell ">
+        <view class="weui-cell__bd">
+          <input class="weui-input" value="{{url}}" placeholder="请输入图片URL地址" bindinput="urlChange" />
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" bindtap="uploadFileFromUrl">远程下载</button>
+    </view>
+  </view>
+</view>

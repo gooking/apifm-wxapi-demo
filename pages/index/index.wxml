@@ -53,6 +53,10 @@
         <text>省市区数据</text>
         <text>最新行政区数据</text>
       </navigator>
+      <navigator url="/pages/dfs/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>文件系统</text>
+        <text>上传/下载/管理</text>
+      </navigator>
     </view>
   </view>
 </view>

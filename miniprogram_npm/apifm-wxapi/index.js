@@ -488,6 +488,17 @@ module.exports = {
       });
     });
   },
+  uploadFileFromUrl: function uploadFileFromUrl() {
+    var remoteFileUrl = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+    var ext = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+
+    return request('/dfs/upload/url', true, 'post', { remoteFileUrl: remoteFileUrl, ext: ext });
+  },
+  uploadFileList: function uploadFileList() {
+    var path = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+    return request('/dfs/upload/list', true, 'post', { path: path });
+  },
   refundApply: function refundApply(token, orderId, type, logisticsStatus, reason, amount, remark, pic) {
     return request('/order/refundApply/apply', true, 'post', {
       token: token,

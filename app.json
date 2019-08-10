@@ -1,5 +1,5 @@
 {
-  "pages": [
+  "pages": ["pages/dfs/index",
     "pages/index/index",
     "pages/index/cms",
     "pages/banner/index",
