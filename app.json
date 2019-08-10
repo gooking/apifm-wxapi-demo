@@ -1,5 +1,5 @@
 {
-  "pages": ["pages/dfs/index",
+  "pages": [
     "pages/index/index",
     "pages/index/cms",
     "pages/banner/index",
@@ -19,7 +19,8 @@
     "pages/page/index",
     "pages/tags/index",
     "pages/barcode/index",
-    "pages/region/index"
+    "pages/region/index",
+    "pages/dfs/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
