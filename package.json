@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "apifm-wxapi": "^1.11.0"
+    "apifm-wxapi": "^1.12.0"
   }
 }

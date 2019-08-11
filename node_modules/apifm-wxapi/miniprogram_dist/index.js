@@ -145,8 +145,13 @@ module.exports = {
     subDomain = b;
   },
   request: request,
-  queryMobileLocation: function queryMobileLocation(data) {
-    return request('/common/mobile-segment/location', false, 'get', data);
+  queryMobileLocation: function queryMobileLocation() {
+    var mobile = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+    return request('/common/mobile-segment/location', false, 'get', { mobile: mobile });
+  },
+  nextMobileSegment: function nextMobileSegment(data) {
+    return request('/common/mobile-segment/next', false, 'post', data);
   },
   queryConfigValue: function queryConfigValue(key) {
     return request('/config/value', true, 'get', { key: key });

@@ -61,6 +61,10 @@
         <text>Json数据云存储</text>
         <text>自定义数据格式</text>
       </navigator>
+      <navigator url="/pages/mobile-location/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>手机号归属地</text>
+        <text>查手机号码</text>
+      </navigator>
     </view>
   </view>
 </view>

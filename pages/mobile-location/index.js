@@ -1,9 +1,8 @@
 const WXAPI = require('apifm-wxapi')
-WXAPI.init('gooking')
 
 Page({
   data: {
-    barcode: undefined,
+    mobile: undefined,
     queryResult: undefined,
   },
   onLoad: function (options) {
@@ -12,34 +11,21 @@ Page({
   onShow: function () {
 
   },
-  barcodeChange(e){
+  mobileChange(e){
     this.setData({
-      barcode: e.detail.value,
+      mobile: e.detail.value,
       queryResult: null
     })
   },
-  scan(){ // 扫码识别
-    const _this = this
-    wx.scanCode({
-      success(res) {
-        console.log(res)
-        _this.setData({
-          barcode: res.result,
-          queryResult: null
-        })
-        _this.queryBarcode()
-      }
-    })
-  },
-  queryBarcode() { // 查询条码
-    if (!this.data.barcode){
+  query() { // 查询
+    if (!this.data.mobile){
       wx.showToast({
-        title: '条码不能为空',
+        title: '手机号码不能为空',
         icon: 'none'
       })
       return
     }
-    WXAPI.queryBarcode(this.data.barcode).then(res => {
+    WXAPI.queryMobileLocation(this.data.mobile).then(res => {
       console.log(res)
       if (res.code == 0) {
         wx.showToast({

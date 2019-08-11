@@ -27,6 +27,7 @@ Page({
         title: '请先登录',
         icon: 'none'
       })
+      this.goRegist()
       return
     }
     WXAPI.jsonList({
@@ -56,6 +57,7 @@ Page({
         title: '请先登录',
         icon: 'none'
       })
+      this.goRegist()
       return
     }
     if (!this.data.inputvalue) {

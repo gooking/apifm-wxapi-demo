@@ -21,7 +21,8 @@
     "pages/barcode/index",
     "pages/region/index",
     "pages/dfs/index",
-    "pages/json/index"
+    "pages/json/index",
+    "pages/mobile-location/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
