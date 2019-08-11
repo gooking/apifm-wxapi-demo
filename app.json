@@ -22,7 +22,8 @@
     "pages/region/index",
     "pages/dfs/index",
     "pages/json/index",
-    "pages/mobile-location/index"
+    "pages/mobile-location/index",
+    "pages/graph-validate-code/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

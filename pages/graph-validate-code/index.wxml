@@ -1,0 +1,18 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell ">
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="number" placeholder="请输入右侧验证码" value="{{code}}" bindinput="codeChange" />
+        </view>
+        <view class="weui-cell__ft">
+          <image bindtap="changePic" class="iconScan" src="{{ picurl }}"></image>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" bindtap="check">校验输入是否正确</button>
+    </view>
+  </view>
+</view>

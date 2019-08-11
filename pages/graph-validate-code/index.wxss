@@ -1,0 +1,8 @@
+button {
+  width:600rpx;
+  margin-top:50rpx;
+}
+.iconScan {
+  width: 200px;
+  height: 50px;
+}

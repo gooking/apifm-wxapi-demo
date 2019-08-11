@@ -630,6 +630,18 @@ module.exports = {
     var id = arguments[1];
 
     return request('/json/delete', true, 'post', { token: token, id: id });
+  },
+  graphValidateCodeUrl: function graphValidateCodeUrl() {
+    var key = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : Math.random();
+
+    var _url = API_BASE_URL + '/' + subDomain + '/verification/pic/get?key=' + key;
+    return _url;
+  },
+  graphValidateCodeCheck: function graphValidateCodeCheck() {
+    var key = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : Math.random();
+    var code = arguments[1];
+
+    return request('/verification/pic/check', true, 'post', { key: key, code: code });
   }
 };
 

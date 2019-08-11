@@ -65,6 +65,10 @@
         <text>手机号归属地</text>
         <text>查手机号码</text>
       </navigator>
+      <navigator url="/pages/graph-validate-code/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>图形验证码</text>
+        <text>输入校验</text>
+      </navigator>
     </view>
   </view>
 </view>
