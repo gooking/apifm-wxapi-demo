@@ -642,6 +642,11 @@ module.exports = {
     var code = arguments[1];
 
     return request('/verification/pic/check', true, 'post', { key: key, code: code });
+  },
+  shortUrl: function shortUrl() {
+    var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+    return request('/common/short-url/shorten', false, 'post', { url: url });
   }
 };
 

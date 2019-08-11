@@ -1,0 +1,23 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell ">
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请输入你要转换的长链接" value="{{url}}" bindinput="urlChange" />
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{queryResult}}" class="weui-cells__title">转换结果</view>
+    <view wx:if="{{queryResult}}" class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">{{ queryResult }}</view>
+        <view class="weui-cell__ft" bindtap="copyUrl">复制</view>
+      </view>
+    </view>
+
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" bindtap="shortUrl">立即转换</button>
+    </view>
+  </view>
+</view>
