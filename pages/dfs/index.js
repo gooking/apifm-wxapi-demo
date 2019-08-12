@@ -1,5 +1,4 @@
 const WXAPI = require('apifm-wxapi')
-WXAPI.init('gooking')
 
 Page({
   data: {

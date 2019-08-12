@@ -1,12 +1,11 @@
 const WXAPI = require('apifm-wxapi')
-WXAPI.init('gooking')
 
 Page({
   data: {
 
   },
   onLoad: function (options) {
-
+    
   },
   register_simple(e) {
     if (!e.detail.userInfo) {

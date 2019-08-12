@@ -1,5 +1,4 @@
 const WXAPI = require('apifm-wxapi')
-WXAPI.init('gooking')
 
 const luckyInfoId = 165 // 后台抽奖设置里面的项目ID
 
