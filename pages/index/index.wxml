@@ -29,22 +29,10 @@
         <text>实时抽奖</text>
         <text>到期开奖</text>
       </navigator>
-      <navigator url="/pages/asset/index" class="weui-grid" hover-class="weui-grid_activer">
-        <text>用户资产</text>
-        <text>资金流水</text>
-      </navigator>
-      <navigator url="/pages/deposit/index" class="weui-grid" hover-class="weui-grid_activer">
-        <text>押金管理</text>
-        <text>可押可退</text>
-      </navigator>
-      <navigator url="/pages/invoice/index" class="weui-grid" hover-class="weui-grid_activer">
-        <text>发票管理</text>
-        <text>自助申请</text>
-      </navigator>
-      <navigator url="/pages/withDraw/index" class="weui-grid" hover-class="weui-grid_activer">
-        <text>提现管理</text>
-        <text>提现记录</text>
-      </navigator>
+      <navigator url="/pages/index/finance" class="weui-grid" hover-class="weui-grid_activer">
+        <text>财务管理</text>
+        <text>资金相关</text>
+      </navigator>      
       <navigator url="/pages/barcode/index" class="weui-grid" hover-class="weui-grid_activer">
         <text>商品条码</text>
         <text>条码查询</text>
@@ -68,14 +56,14 @@
       <navigator url="/pages/graph-validate-code/index" class="weui-grid" hover-class="weui-grid_activer">
         <text>图形验证码</text>
         <text>输入校验</text>
-      </navigator>
-      <navigator url="/pages/short-url/index" class="weui-grid" hover-class="weui-grid_activer">
-        <text>短链接服务</text>
-        <text>长链转短链</text>
-      </navigator>
+      </navigator>      
       <navigator url="/pages/sms-validate-code/index" class="weui-grid" hover-class="weui-grid_activer">
         <text>短信验证码</text>
         <text>输入校验</text>
+      </navigator>
+      <navigator url="/pages/coupons/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>优惠券</text>
+        <text>口令红包</text>
       </navigator>
     </view>
   </view>

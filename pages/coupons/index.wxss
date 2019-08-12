@@ -1,0 +1,6 @@
+.couponAmount {
+  color:red;
+}
+.marginL {
+  margin-left: 20rpx;
+}

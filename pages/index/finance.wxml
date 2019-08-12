@@ -1,0 +1,22 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-grids">
+      <navigator url="/pages/asset/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>用户资产</text>
+        <text>资金流水</text>
+      </navigator>
+      <navigator url="/pages/deposit/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>押金管理</text>
+        <text>可押可退</text>
+      </navigator>
+      <navigator url="/pages/invoice/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>发票管理</text>
+        <text>自助申请</text>
+      </navigator>
+      <navigator url="/pages/withDraw/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>提现管理</text>
+        <text>提现记录</text>
+      </navigator>      
+    </view>
+  </view>
+</view>

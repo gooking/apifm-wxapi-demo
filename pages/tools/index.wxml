@@ -1,2 +1,3 @@
 <button type="warn" bindtap="uniqueId"> 获取分布式系统唯一ID </button>
 <button type="warn" bindtap="goQueryBarcode"> 商品条形码识别 </button>
+<button type="warn" bindtap="goShortUrl"> 长链接转短链接 </button>

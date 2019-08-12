@@ -293,6 +293,9 @@ module.exports = {
   fetchCoupons: function fetchCoupons(data) {
     return request('/discounts/fetch', true, 'post', data);
   },
+  sendCoupons: function sendCoupons(data) {
+    return request('/discounts/send', true, 'post', data);
+  },
   noticeList: function noticeList(data) {
     return request('/notice/list', true, 'post', data);
   },

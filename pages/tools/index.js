@@ -27,5 +27,10 @@ Page({
     wx.navigateTo({
       url: '/pages/barcode/index'
     })
+  },
+  goShortUrl(){
+    wx.navigateTo({
+      url: '/pages/short-url/index'
+    })
   }
 })
