@@ -1,0 +1,29 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell ">
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="number" placeholder="请输入手机号码" value="{{mobile}}" bindinput="mobileChange" />
+        </view>
+      </view>
+      <view class="weui-cell ">
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="number" placeholder="请输入右侧验证码" value="{{piccode}}" bindinput="piccodeChange" />
+        </view>
+        <view class="weui-cell__ft">
+          <image bindtap="changePic" class="iconScan" src="{{ picurl }}"></image>
+        </view>
+      </view>
+      <view wx:if="{{smsCodeSend}}" class="weui-cell ">
+        <view class="weui-cell__bd">
+          <input class="weui-input" type="number" placeholder="输入短信验证码" value="{{code}}" bindinput="codeChange" />
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-btn-area">
+      <button wx:if="{{!smsCodeSend}}" class="weui-btn" type="primary" bindtap="get">获取短信验证码</button>
+      <button wx:if="{{smsCodeSend}}" class="weui-btn" type="warn" bindtap="check">校验输入是否正确</button>
+    </view>
+  </view>
+</view>

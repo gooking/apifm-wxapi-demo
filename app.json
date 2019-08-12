@@ -24,7 +24,8 @@
     "pages/json/index",
     "pages/mobile-location/index",
     "pages/graph-validate-code/index",
-    "pages/short-url/index"
+    "pages/short-url/index",
+    "pages/sms-validate-code/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

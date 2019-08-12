@@ -647,6 +647,15 @@ module.exports = {
     var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
 
     return request('/common/short-url/shorten', false, 'post', { url: url });
+  },
+  smsValidateCode: function smsValidateCode(mobile) {
+    var key = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+    var picCode = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+
+    return request('/verification/sms/get', true, 'get', { mobile: mobile, key: key, picCode: picCode });
+  },
+  smsValidateCodeCheck: function smsValidateCodeCheck(mobile, code) {
+    return request('/verification/sms/check', true, 'post', { mobile: mobile, code: code });
   }
 };
 

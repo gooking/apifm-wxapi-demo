@@ -73,6 +73,10 @@
         <text>短链接服务</text>
         <text>长链转短链</text>
       </navigator>
+      <navigator url="/pages/sms-validate-code/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>短信验证码</text>
+        <text>输入校验</text>
+      </navigator>
     </view>
   </view>
 </view>
