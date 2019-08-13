@@ -65,6 +65,10 @@
         <text>优惠券</text>
         <text>口令红包</text>
       </navigator>
+      <navigator url="/pages/map/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>地图接口</text>
+        <text>地理位置</text>
+      </navigator>
     </view>
   </view>
 </view>

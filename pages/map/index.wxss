@@ -1,0 +1,8 @@
+map {
+  width: 100%;
+  height: 100vh;
+}
+button {
+  width:600rpx;
+  margin-top:50rpx;
+}

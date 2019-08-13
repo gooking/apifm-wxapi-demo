@@ -659,6 +659,15 @@ module.exports = {
   },
   smsValidateCodeCheck: function smsValidateCodeCheck(mobile, code) {
     return request('/verification/sms/check', true, 'post', { mobile: mobile, code: code });
+  },
+  mapDistance: function mapDistance(lat1, lng1, lat2, lng2) {
+    return request('/common/map/distance', false, 'get', { lat1: lat1, lng1: lng1, lat2: lat2, lng2: lng2 });
+  },
+  mapQQAddress: function mapQQAddress() {
+    var location = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+    var coord_type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '5';
+
+    return request('/common/map/qq/address', false, 'get', { location: location, coord_type: coord_type });
   }
 };
 

@@ -27,7 +27,8 @@
     "pages/graph-validate-code/index",
     "pages/short-url/index",
     "pages/sms-validate-code/index",
-    "pages/coupons/index"
+    "pages/coupons/index",
+    "pages/map/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -35,5 +36,10 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "微信规定必须要说明定位用途"
+    }
+  }
 }
