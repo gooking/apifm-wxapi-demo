@@ -742,6 +742,9 @@ module.exports = {
 
     return request('/common/map/qq/address', false, 'get', { location: location, coord_type: coord_type });
   },
+  mapQQSearch: function mapQQSearch(data) {
+    return request('/common/map/qq/search', false, 'post', data);
+  },
   virtualTraderList: function virtualTraderList(data) {
     return request('/virtualTrader/list', true, 'post', data);
   },

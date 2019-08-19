@@ -1,2 +1,3 @@
 <button type="primary" bindtap="queryAddress"> 读取当前地址坐标并查询地址 </button>
-<button type="warn" bindtap="selAddress"> 选地址计算距离 </button>
+<button type="primary" bindtap="selAddress"> 选地址计算距离 </button>
+<button type="primary" bindtap="search"> 搜索附近的肯德基(附近5公里) </button>

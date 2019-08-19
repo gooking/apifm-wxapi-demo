@@ -60,5 +60,26 @@ Page({
         })
       }
     })
-  }
+  },
+  search(){ // 搜索附近的肯德基
+    const _this = this
+    if (!this.data.latitude || !this.data.longitude) {
+      wx.showToast({
+        title: '请先读取当前地址',
+        icon: 'none'
+      })
+      return
+    }
+    WXAPI.mapQQSearch({
+      keyword: 'kfc',
+      boundary: 'nearby(' + this.data.latitude + ',' + this.data.longitude + ',5000)'
+    }).then(res => {
+      console.log(res)
+      wx.showModal({
+        title: '成功',
+        content: '搜索结果请看控制台输出',
+        showCancel: false
+      })
+    })
+  },
 })
