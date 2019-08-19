@@ -28,7 +28,8 @@
     "pages/short-url/index",
     "pages/sms-validate-code/index",
     "pages/coupons/index",
-    "pages/map/index"
+    "pages/map/index",
+    "pages/queuing/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

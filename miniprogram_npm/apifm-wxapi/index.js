@@ -191,13 +191,10 @@ module.exports = {
       iv: iv
     });
   },
-  kanjiaList: function kanjiaList(data) {
-    return request('/shop/goods/kanjia/list', true, 'post', data);
-  },
   kanjiaSet: function kanjiaSet(goodsId) {
     return request('/shop/goods/kanjia/set', true, 'get', { goodsId: goodsId });
   },
-  kanjiaJoin: function kanjiaJoin(kjid, token) {
+  kanjiaJoin: function kanjiaJoin(token, kjid) {
     return request('/shop/goods/kanjia/join', true, 'post', {
       kjid: kjid,
       token: token
@@ -209,7 +206,9 @@ module.exports = {
       joiner: joiner
     });
   },
-  kanjiaHelp: function kanjiaHelp(kjid, joiner, token, remark) {
+  kanjiaHelp: function kanjiaHelp(token, kjid, joiner) {
+    var remark = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+
     return request('/shop/goods/kanjia/help', true, 'post', {
       kjid: kjid,
       joinerUser: joiner,
@@ -217,7 +216,19 @@ module.exports = {
       remark: remark
     });
   },
-  kanjiaHelpDetail: function kanjiaHelpDetail(kjid, joiner, token) {
+  kanjiaClear: function kanjiaClear(token, kjid) {
+    return request('/shop/goods/kanjia/clear', true, 'post', {
+      kjid: kjid,
+      token: token
+    });
+  },
+  kanjiaMyJoinInfo: function kanjiaMyJoinInfo(token, kjid) {
+    return request('/shop/goods/kanjia/my', true, 'get', {
+      kjid: kjid,
+      token: token
+    });
+  },
+  kanjiaHelpDetail: function kanjiaHelpDetail(token, kjid, joiner) {
     return request('/shop/goods/kanjia/myHelp', true, 'get', {
       kjid: kjid,
       joinerUser: joiner,
@@ -273,11 +284,56 @@ module.exports = {
       id: id
     });
   },
-  goodsPrice: function goodsPrice(data) {
-    return request('/shop/goods/price', true, 'post', data);
+  goodsLimitations: function goodsLimitations(goodsId) {
+    var priceId = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+
+    return request('/shop/goods/limitation', true, 'get', {
+      goodsId: goodsId, priceId: priceId
+    });
+  },
+  goodsPrice: function goodsPrice(goodsId, propertyChildIds) {
+    return request('/shop/goods/price', true, 'post', {
+      goodsId: goodsId, propertyChildIds: propertyChildIds
+    });
+  },
+  goodsPriceDaily: function goodsPriceDaily(goodsId) {
+    var priceId = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+
+    return request('/shop/goods/price/day', true, 'get', {
+      goodsId: goodsId, priceId: priceId
+    });
+  },
+  goodsPriceFreight: function goodsPriceFreight(data) {
+    return request('/shop/goods/price/freight', true, 'get', data);
+  },
+  goodsRebate: function goodsRebate(token, goodsId) {
+    return request('/shop/goods/rebate', true, 'get', {
+      token: token, goodsId: goodsId
+    });
   },
   goodsReputation: function goodsReputation(data) {
     return request('/shop/goods/reputation', true, 'post', data);
+  },
+  goodsFavList: function goodsFavList(data) {
+    return request('/shop/goods/fav/list', true, 'post', data);
+  },
+  goodsFavPut: function goodsFavPut(token, goodsId) {
+    return request('/shop/goods/fav/add', true, 'post', {
+      token: token, goodsId: goodsId
+    });
+  },
+  goodsFavCheck: function goodsFavCheck(token, goodsId) {
+    return request('/shop/goods/fav/check', true, 'get', {
+      token: token, goodsId: goodsId
+    });
+  },
+  goodsFavDelete: function goodsFavDelete(token) {
+    var id = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+    var goodsId = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+
+    return request('/shop/goods/fav/delete', true, 'post', {
+      token: token, id: id, goodsId: goodsId
+    });
   },
   coupons: function coupons(data) {
     return request('/discounts/coupons', true, 'get', data);
@@ -344,16 +400,25 @@ module.exports = {
       goodsId: goodsId
     });
   },
-  pingtuanOpen: function pingtuanOpen(goodsId, token) {
+  pingtuanSets: function pingtuanSets(goodsIdArray) {
+    return request('/shop/goods/pingtuan/sets', true, 'get', {
+      goodsId: goodsIdArray.join()
+    });
+  },
+  pingtuanOpen: function pingtuanOpen(token, goodsId) {
     return request('/shop/goods/pingtuan/open', true, 'post', {
       goodsId: goodsId,
       token: token
     });
   },
-  pingtuanList: function pingtuanList(goodsId) {
-    return request('/shop/goods/pingtuan/list', true, 'get', {
-      goodsId: goodsId
-    });
+  pingtuanList: function pingtuanList(data) {
+    return request('/shop/goods/pingtuan/list/v2', true, 'post', data);
+  },
+  pingtuanJoinUsers: function pingtuanJoinUsers(tuanId) {
+    return request('/shop/goods/pingtuan/joiner', true, 'get', { tuanId: tuanId });
+  },
+  pingtuanMyJoined: function pingtuanMyJoined(data) {
+    return request('/shop/goods/pingtuan/my-join-list', true, 'post', data);
   },
   friendlyPartnerList: function friendlyPartnerList() {
     var type = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
@@ -386,13 +451,13 @@ module.exports = {
   orderList: function orderList(data) {
     return request('/order/list', true, 'post', data);
   },
-  orderDetail: function orderDetail(id, token) {
+  orderDetail: function orderDetail(token, id) {
     return request('/order/detail', true, 'get', {
       id: id,
       token: token
     });
   },
-  orderDelivery: function orderDelivery(orderId, token) {
+  orderDelivery: function orderDelivery(token, orderId) {
     return request('/order/delivery', true, 'post', {
       orderId: orderId,
       token: token
@@ -401,21 +466,38 @@ module.exports = {
   orderReputation: function orderReputation(data) {
     return request('/order/reputation', true, 'post', data);
   },
-  orderClose: function orderClose(orderId, token) {
+  orderClose: function orderClose(token, orderId) {
     return request('/order/close', true, 'post', {
       orderId: orderId,
       token: token
     });
   },
-  orderPay: function orderPay(orderId, token) {
+  orderDelete: function orderDelete(token, orderId) {
+    return request('/order/delete', true, 'post', {
+      orderId: orderId,
+      token: token
+    });
+  },
+  orderPay: function orderPay(token, orderId) {
     return request('/order/pay', true, 'post', {
       orderId: orderId,
       token: token
     });
   },
+  orderHX: function orderHX(hxNumber) {
+    return request('/order/hx', true, 'post', {
+      hxNumber: hxNumber
+    });
+  },
   orderStatistics: function orderStatistics(token) {
     return request('/order/statistics', true, 'get', {
       token: token
+    });
+  },
+  orderRefunds: function orderRefunds(token, orderId) {
+    return request('/order/refund', true, 'get', {
+      token: token,
+      orderId: orderId
     });
   },
   withDrawApply: function withDrawApply(token, money) {
@@ -453,8 +535,8 @@ module.exports = {
   payBillDiscounts: function payBillDiscounts() {
     return request('/payBill/discounts', true, 'get');
   },
-  payBill: function payBill(data) {
-    return request('/payBill/pay', true, 'post', data);
+  payBill: function payBill(token, money) {
+    return request('/payBill/pay', true, 'post', { token: token, money: money });
   },
   vipLevel: function vipLevel() {
     return request('/config/vipLevel', true, 'get');
@@ -507,17 +589,8 @@ module.exports = {
 
     return request('/dfs/upload/list', true, 'post', { path: path });
   },
-  refundApply: function refundApply(token, orderId, type, logisticsStatus, reason, amount, remark, pic) {
-    return request('/order/refundApply/apply', true, 'post', {
-      token: token,
-      orderId: orderId,
-      type: type,
-      logisticsStatus: logisticsStatus,
-      reason: reason,
-      amount: amount,
-      remark: remark,
-      pic: pic
-    });
+  refundApply: function refundApply(data) {
+    return request('/order/refundApply/apply', true, 'post', data);
   },
   refundApplyDetail: function refundApplyDetail(token, orderId) {
     return request('/order/refundApply/info', true, 'get', {
@@ -668,6 +741,34 @@ module.exports = {
     var coord_type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '5';
 
     return request('/common/map/qq/address', false, 'get', { location: location, coord_type: coord_type });
+  },
+  virtualTraderList: function virtualTraderList(data) {
+    return request('/virtualTrader/list', true, 'post', data);
+  },
+  virtualTraderDetail: function virtualTraderDetail(token, id) {
+    return request('/virtualTrader/info', true, 'get', { token: token, id: id });
+  },
+  virtualTraderBuy: function virtualTraderBuy(token, id) {
+    return request('/virtualTrader/buy', true, 'post', { token: token, id: id });
+  },
+  virtualTraderMyBuyLogs: function virtualTraderMyBuyLogs(data) {
+    return request('/virtualTrader/buy/logs', true, 'post', data);
+  },
+  queuingTypes: function queuingTypes() {
+    var status = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+    return request('/queuing/types', true, 'get', { status: status });
+  },
+  queuingGet: function queuingGet(token, typeId) {
+    var mobile = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+
+    return request('/queuing/get', true, 'post', { token: token, typeId: typeId, mobile: mobile });
+  },
+  queuingMy: function queuingMy(token) {
+    var typeId = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+    var status = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+
+    return request('/queuing/my', true, 'get', { token: token, typeId: typeId, status: status });
   }
 };
 

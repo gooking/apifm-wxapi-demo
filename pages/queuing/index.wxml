@@ -1,0 +1,3 @@
+<button wx:for="{{ queuingTypes }}" wx:key="id" type="primary" bindtap="queuingGet" data-id="{{ item.id }}">{{ item.name }} (点击取号)</button>
+
+<button type="warn" bindtap="queuingMy">我的号子</button>

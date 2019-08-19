@@ -36,7 +36,7 @@ Page({
       }
     })
   },
-  selAddress(){
+  selAddress(){ // 选择一个地址，读取坐标后计算距离
     const _this = this
     if (!this.data.latitude || !this.data.longitude) {
       wx.showToast({
