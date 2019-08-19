@@ -261,6 +261,19 @@ module.exports = {
   login_username: function login_username(data) {
     return request('/user/username/login', true, 'post', data);
   },
+  login_mobile: function login_mobile(mobile, pwd) {
+    var deviceId = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+    var deviceName = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+
+    return request('/user/m/login', true, 'post', {
+      mobile: mobile, pwd: pwd, deviceId: deviceId, deviceName: deviceName
+    });
+  },
+  resetPwd: function resetPwd(mobile, pwd, code) {
+    return request('/user/m/reset-pwd', true, 'post', {
+      mobile: mobile, pwd: pwd, code: code
+    });
+  },
   register_complex: function register_complex(data) {
     return request('/user/wxapp/register/complex', true, 'post', data);
   },
@@ -269,6 +282,9 @@ module.exports = {
   },
   register_username: function register_username(data) {
     return request('/user/username/register', true, 'post', data);
+  },
+  register_mobile: function register_mobile(data) {
+    return request('/user/m/register', true, 'post', data);
   },
   banners: function banners(data) {
     return request('/banner/list', true, 'get', data);
@@ -432,11 +448,27 @@ module.exports = {
       videoId: videoId
     });
   },
-  bindMobile: function bindMobile(data) {
-    return request('/user/wxapp/bindMobile', true, 'post', data);
+  bindMobileWxa: function bindMobileWxa(token, encryptedData, iv) {
+    var pwd = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+
+    return request('/user/wxapp/bindMobile', true, 'post', {
+      token: token, encryptedData: encryptedData, iv: iv, pwd: pwd
+    });
+  },
+  bindMobileSms: function bindMobileSms(token, mobile, code) {
+    var pwd = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+
+    return request('/user/m/bind-mobile', true, 'post', {
+      token: token, mobile: mobile, code: code, pwd: pwd
+    });
   },
   userDetail: function userDetail(token) {
     return request('/user/detail', true, 'get', {
+      token: token
+    });
+  },
+  userWxinfo: function userWxinfo(token) {
+    return request('/user/wxinfo', true, 'get', {
       token: token
     });
   },
@@ -772,6 +804,12 @@ module.exports = {
     var status = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
 
     return request('/queuing/my', true, 'get', { token: token, typeId: typeId, status: status });
+  },
+  idcardCheck: function idcardCheck(token, name, idCardNo) {
+    return request('/user/idcard', true, 'post', { token: token, name: name, idCardNo: idCardNo });
+  },
+  loginout: function loginout(token) {
+    return request('/user/loginout', true, 'get', { token: token });
   }
 };
 

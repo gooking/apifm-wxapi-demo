@@ -1,3 +1,7 @@
 <button type="primary" open-type="getUserInfo" bindgetuserinfo="register_simple">简易注册</button>
 <button type="primary" open-type="getUserInfo" bindgetuserinfo="register_complex">详细注册</button>
+<button type="primary" bindtap="idcardCheck">实名认证</button>
+<button type="primary" bindtap="openid">获取openid / unionid</button>
+<button type="primary" bindtap="modifyUserInfo">编辑用户资料</button>
 <button type="warn" bindtap="goLogin">登录</button>
+<button type="warn" bindtap="loginout">退出</button>

@@ -29,7 +29,9 @@
     "pages/sms-validate-code/index",
     "pages/coupons/index",
     "pages/map/index",
-    "pages/queuing/index"
+    "pages/queuing/index",
+    "pages/idcardCheck/index",
+    "pages/modifyUserInfo/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

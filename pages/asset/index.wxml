@@ -1,3 +1,2 @@
-<button type="primary" bindtap="goRegist"> 注册 / 登录 </button>
 <button type="warn" bindtap="userAmount"> 读取资产 </button>
 <button type="warn" bindtap="cashLogs"> 读取资金流水 </button>

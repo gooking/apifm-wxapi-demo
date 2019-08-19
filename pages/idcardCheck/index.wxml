@@ -1,0 +1,27 @@
+<view class="page">
+  <view class="page__bd">
+    <form bindsubmit="bindSave" report-submit="true">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">姓名</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input name="name" class="weui-input" placeholder="请输入真实姓名" />
+          </view>
+        </view>
+        <view class="weui-cell ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">身份证</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input name="idCardNo" class="weui-input" placeholder="请输入身份证号码" />
+          </view>
+        </view>
+      </view>
+      <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" formType="submit">实名认证</button>
+      </view>
+    </form>
+  </view>
+</view>

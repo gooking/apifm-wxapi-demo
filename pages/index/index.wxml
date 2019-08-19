@@ -14,8 +14,8 @@
         <text>模块</text>
       </navigator>
       <navigator url="/pages/auth/index" class="weui-grid" hover-class="weui-grid_activer">
-        <text>注册</text>
-        <text>登录</text>
+        <text>注册/登录</text>
+        <text>用户中心</text>
       </navigator>
       <navigator url="/pages/config/index" class="weui-grid" hover-class="weui-grid_activer">
         <text>系统参数</text>

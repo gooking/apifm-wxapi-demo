@@ -15,7 +15,7 @@ Page({
       url: '/pages/auth/index'
     })
   },
-  userAmount() {
+  bindSave(e) {
     const loginToken = wx.getStorageSync('loginToken')
     if (!loginToken) {
       wx.showToast({
@@ -25,38 +25,20 @@ Page({
       this.goRegist()
       return
     }
-    WXAPI.userAmount(loginToken.token).then(res => {
-      console.log(res)
-      if (res.code == 0) {
-        wx.showToast({
-          title: '读取成功',
-          icon: 'success'
-        })
-      } else {
-        wx.showToast({
-          title: res.msg,
-          icon: 'none'
-        })
-      }
-    })
-  },
-  cashLogs() {
-    const loginToken = wx.getStorageSync('loginToken')
-    if (!loginToken) {
+    const name = e.detail.value.name;
+    const idCardNo = e.detail.value.idCardNo;
+    if (!name || !idCardNo) {
       wx.showToast({
-        title: '请先登录',
+        title: '信息未填写',
         icon: 'none'
       })
-      this.goRegist()
       return
     }
-    WXAPI.cashLogs({
-      token: loginToken.token
-    }).then(res => {
+    WXAPI.idcardCheck(loginToken.token, name, idCardNo).then(res => {
       console.log(res)
       if (res.code == 0) {
         wx.showToast({
-          title: '读取成功',
+          title: '认证通过',
           icon: 'success'
         })
       } else {
