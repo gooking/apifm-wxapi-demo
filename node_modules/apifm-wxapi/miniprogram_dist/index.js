@@ -261,6 +261,13 @@ module.exports = {
   login_username: function login_username(data) {
     return request('/user/username/login', true, 'post', data);
   },
+  bindUsername: function bindUsername(token, username) {
+    var pwd = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+
+    return request('/user/username/bindUsername', true, 'post', {
+      token: token, username: username, pwd: pwd
+    });
+  },
   login_mobile: function login_mobile(mobile, pwd) {
     var deviceId = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
     var deviceName = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
@@ -389,7 +396,7 @@ module.exports = {
   updateAddress: function updateAddress(data) {
     return request('/user/shipping-address/update', true, 'post', data);
   },
-  deleteAddress: function deleteAddress(id, token) {
+  deleteAddress: function deleteAddress(token, id) {
     return request('/user/shipping-address/delete', true, 'post', {
       id: id,
       token: token
@@ -401,12 +408,12 @@ module.exports = {
     });
   },
   defaultAddress: function defaultAddress(token) {
-    return request('/user/shipping-address/default', true, 'get', {
+    return request('/user/shipping-address/default/v2', true, 'get', {
       token: token
     });
   },
-  addressDetail: function addressDetail(id, token) {
-    return request('/user/shipping-address/detail', true, 'get', {
+  addressDetail: function addressDetail(token, id) {
+    return request('/user/shipping-address/detail/v2', true, 'get', {
       id: id,
       token: token
     });
@@ -442,6 +449,15 @@ module.exports = {
     return request('/friendly-partner/list', true, 'post', {
       type: type
     });
+  },
+  friendList: function friendList(data) {
+    return request('/user/friend/list', true, 'post', data);
+  },
+  addFriend: function addFriend(token, uid) {
+    return request('/user/friend/add', true, 'post', { token: token, uid: uid });
+  },
+  friendUserDetail: function friendUserDetail(token, uid) {
+    return request('/user/friend/detail', true, 'get', { token: token, uid: uid });
   },
   videoDetail: function videoDetail(videoId) {
     return request('/media/video/detail', true, 'get', {
@@ -810,6 +826,49 @@ module.exports = {
   },
   loginout: function loginout(token) {
     return request('/user/loginout', true, 'get', { token: token });
+  },
+  userLevelList: function userLevelList(data) {
+    return request('/user/level/list', true, 'post', data);
+  },
+  userLevelDetail: function userLevelDetail(levelId) {
+    return request('/user/level/info', true, 'get', { id: levelId });
+  },
+  userLevelPrices: function userLevelPrices(levelId) {
+    return request('/user/level/prices', true, 'get', { levelId: levelId });
+  },
+  userLevelBuy: function userLevelBuy(token, priceId) {
+    var isAutoRenew = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+    var remark = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+
+    return request('/user/level/buy', true, 'post', {
+      token: token,
+      userLevelPriceId: priceId,
+      isAutoRenew: isAutoRenew,
+      remark: remark
+    });
+  },
+  userLevelBuyLogs: function userLevelBuyLogs(data) {
+    return request('/user/level/buyLogs', true, 'post', data);
+  },
+  messageList: function messageList(data) {
+    return request('/user/message/list', true, 'post', data);
+  },
+  messageRead: function messageRead(token, id) {
+    return request('/user/message/read', true, 'post', { token: token, id: id });
+  },
+  messageDelete: function messageDelete(token, id) {
+    return request('/user/message/del', true, 'post', { token: token, id: id });
+  },
+  bindOpenid: function bindOpenid(token, code) {
+    return request('/user/wxapp/bindOpenid', true, 'post', {
+      token: token, code: code,
+      type: 2
+    });
+  },
+  encryptedData: function encryptedData(code, _encryptedData, iv) {
+    return request('/user/wxapp/decode/encryptedData', true, 'post', {
+      code: code, encryptedData: _encryptedData, iv: iv
+    });
   }
 };
 

@@ -1,0 +1,74 @@
+<view class="page">
+  <view class="page__bd">
+    <form bindsubmit="bindSave" report-submit="true">
+      <view class="weui-cells__title">选择</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__hd weui-cell__hd_in-select-after">
+            <view class="weui-label">省份</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="provinceChange" value="{{pIndex}}" range="{{provinces}}" range-key="name">
+              <view class="weui-select weui-select_in-select-after">{{provinces[pIndex].name}}</view>
+            </picker>
+          </view>
+        </view>
+        <view wx:if="{{cities}}" class="weui-cell weui-cell_select">
+          <view class="weui-cell__hd weui-cell__hd_in-select-after">
+            <view class="weui-label">城市</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="cityChange" value="{{cIndex}}" range="{{cities}}" range-key="name">
+              <view class="weui-select weui-select_in-select-after">{{cities[cIndex].name}}</view>
+            </picker>
+          </view>
+        </view>
+        <view wx:if="{{areas}}" class="weui-cell weui-cell_select">
+          <view class="weui-cell__hd weui-cell__hd_in-select-after">
+            <view class="weui-label">区县</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="areaChange" value="{{aIndex}}" range="{{areas}}" range-key="name">
+              <view class="weui-select weui-select_in-select-after">{{areas[aIndex].name}}</view>
+            </picker>
+          </view>
+        </view>
+        <view class="weui-cell ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">联系人</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input name="linkMan" class="weui-input" placeholder="请输入真实姓名" />
+          </view>
+        </view>
+        <view class="weui-cell ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">详细地址</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input name="address" class="weui-input" placeholder="请输入真实姓名" />
+          </view>
+        </view>
+        <view class="weui-cell ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">手机号码</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input name="mobile" class="weui-input" placeholder="请输入真实姓名" />
+          </view>
+        </view>
+        <view class="weui-cell ">
+          <view class="weui-cell__hd">
+            <view class="weui-label">邮编</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input name="code" class="weui-input" placeholder="请输入真实姓名" />
+          </view>
+        </view>
+      </view>
+      <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" formType="submit">{{ btnName }}</button>
+      </view>
+    </form>
+  </view>
+</view>

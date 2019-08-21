@@ -31,7 +31,9 @@
     "pages/map/index",
     "pages/queuing/index",
     "pages/idcardCheck/index",
-    "pages/modifyUserInfo/index"
+    "pages/modifyUserInfo/index",
+    "pages/shipping-address/list",
+    "pages/shipping-address/add"
   ],
   "window": {
     "backgroundTextStyle": "light",

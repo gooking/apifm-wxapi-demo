@@ -1,0 +1,7 @@
+.marginL {
+  margin-left: 20rpx;
+}
+.addAddress {
+  width:650rpx;
+  margin-top:50rpx;
+}

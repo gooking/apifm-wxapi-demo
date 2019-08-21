@@ -1,0 +1,27 @@
+<view class="page">
+  <view class="page__bd">
+    <view wx:for="{{ addressList }}" wx:key="*this" class="weui-panel">
+      <view class="weui-panel__hd"> {{ item.linkMan }} </view>
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text">
+            {{ item.mobile }}
+          </view>
+          <view class="weui-media-box__desc">
+            {{ item.provinceStr }}{{ item.cityStr }}{{ item.areaStr }}{{ item.address }}
+          </view>
+          <view class="weui-media-box__info" style="margin-top: 0px;">
+            <view class="button-sp-area">
+              <button class="weui-btn mini-btn" type="default" size="mini" bindtap="addressDetail" data-id="{{ item.id }}">详情</button>
+              <button class="weui-btn mini-btn marginL" type="primary" size="mini" bindtap="updateAddress" data-id="{{ item.id }}">编辑</button>
+
+              <button class="weui-btn mini-btn marginL" type="warn" size="mini" bindtap="deleteAddress" data-id="{{ item.id }}">删除</button>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<button class="addAddress" type="default" bindtap="addAddress">添加新的收货地址</button>
+<button class="addAddress" type="primary" bindtap="defaultAddress">读取默认地址</button>

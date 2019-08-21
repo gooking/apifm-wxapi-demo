@@ -73,6 +73,10 @@
         <text>排队叫号</text>
         <text>办事取号</text>
       </navigator>
+      <navigator url="/pages/shipping-address/list" class="weui-grid" hover-class="weui-grid_activer">
+        <text>快递地址</text>
+        <text>收货地址</text>
+      </navigator>
     </view>
   </view>
 </view>
