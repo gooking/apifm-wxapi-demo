@@ -1,7 +1,3 @@
-<view class="container">
-  <text>本案例运行结果</text>
-  <text>请查看控制台(console)打印输出</text>
-</view>
 <view class="page">
   <view class="page__bd">
     <view class="weui-grids">
@@ -49,10 +45,6 @@
         <text>Json数据云存储</text>
         <text>自定义数据格式</text>
       </navigator>
-      <navigator url="/pages/mobile-location/index" class="weui-grid" hover-class="weui-grid_activer">
-        <text>手机号归属地</text>
-        <text>查手机号码</text>
-      </navigator>
       <navigator url="/pages/graph-validate-code/index" class="weui-grid" hover-class="weui-grid_activer">
         <text>图形验证码</text>
         <text>输入校验</text>
@@ -73,9 +65,9 @@
         <text>排队叫号</text>
         <text>办事取号</text>
       </navigator>
-      <navigator url="/pages/shipping-address/list" class="weui-grid" hover-class="weui-grid_activer">
-        <text>快递地址</text>
-        <text>收货地址</text>
+      <navigator url="/pages/sign/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>每日签到</text>
+        <text>签到送积分</text>
       </navigator>
     </view>
   </view>

@@ -146,6 +146,11 @@ Page({
       url: '/pages/modifyUserInfo/index'
     })
   },
+  shippingAddress(){
+    wx.navigateTo({
+      url: '/pages/shipping-address/list'
+    })
+  },
   openid(){
     const loginToken = wx.getStorageSync('loginToken')
     if (!loginToken) {

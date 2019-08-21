@@ -3,5 +3,6 @@
 <button type="primary" bindtap="idcardCheck">实名认证</button>
 <button type="primary" bindtap="openid">获取openid / unionid</button>
 <button type="primary" bindtap="modifyUserInfo">编辑用户资料</button>
+<button type="primary" bindtap="shippingAddress">收货地址管理</button>
 <button type="warn" bindtap="goLogin">登录</button>
 <button type="warn" bindtap="loginout">退出</button>

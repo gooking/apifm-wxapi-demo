@@ -1,0 +1,29 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-panel">
+      <view class="weui-panel__hd"> 签到规则： </view>
+      <view class="weui-panel__bd">
+        <view wx:for="{{ scoreSignRules }}" wx:key="*this" class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text">
+            连续签到 {{ item.continuous }} 天，赠送 {{ item.score }} 积分
+          </view>
+        </view>
+      </view>
+    </view>
+    <button wx:if="{{todaySigned}}" class="addAddress" type="default" disabled>今日已签到,明天再来</button>
+    <button wx:else class="addAddress" type="primary" bindtap="scoreSign">点击签到</button>
+    <view class="weui-panel">
+      <view class="weui-panel__hd"> 签到记录： </view>
+      <view class="weui-panel__bd">
+        <view wx:for="{{ scoreSignLogs }}" wx:key="*this" class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text">
+            连续签到第 {{ item.continuous }} 天
+          </view>
+          <view class="weui-media-box__desc">
+            {{ item.dateAdd }}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -33,7 +33,8 @@
     "pages/idcardCheck/index",
     "pages/modifyUserInfo/index",
     "pages/shipping-address/list",
-    "pages/shipping-address/add"
+    "pages/shipping-address/add",
+    "pages/sign/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

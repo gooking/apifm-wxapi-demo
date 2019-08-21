@@ -162,6 +162,9 @@ module.exports = {
   scoreRules: function scoreRules(data) {
     return request('/score/send/rule', true, 'post', data);
   },
+  scoreSignRules: function scoreSignRules() {
+    return request('/score/sign/rules', true, 'get', {});
+  },
   scoreSign: function scoreSign(token) {
     return request('/score/sign', true, 'post', {
       token: token
@@ -869,6 +872,9 @@ module.exports = {
     return request('/user/wxapp/decode/encryptedData', true, 'post', {
       code: code, encryptedData: _encryptedData, iv: iv
     });
+  },
+  scoreDeductionRules: function scoreDeductionRules() {
+    return request('/score/deduction/rules', true, 'get', {});
   }
 };
 

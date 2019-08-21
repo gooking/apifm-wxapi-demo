@@ -32,5 +32,10 @@ Page({
     wx.navigateTo({
       url: '/pages/short-url/index'
     })
-  }
+  },
+  mobileLocation(){
+    wx.navigateTo({
+      url: '/pages/mobile-location/index'
+    })
+  },
 })
