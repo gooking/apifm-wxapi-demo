@@ -69,6 +69,10 @@
         <text>每日签到</text>
         <text>签到送积分</text>
       </navigator>
+      <navigator url="/pages/exchange-coupon/index" class="weui-grid" hover-class="weui-grid_activer">
+        <text>兑换优惠券</text>
+        <text>券密领券</text>
+      </navigator>
     </view>
   </view>
 </view>

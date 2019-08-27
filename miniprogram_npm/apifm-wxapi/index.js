@@ -178,7 +178,7 @@ module.exports = {
       token: token
     });
   },
-  scoreExchange: function scoreExchange(number, token) {
+  scoreExchange: function scoreExchange(token, number) {
     return request('/score/exchange', true, 'post', {
       number: number,
       token: token
@@ -243,8 +243,10 @@ module.exports = {
       token: token
     });
   },
-  addTempleMsgFormid: function addTempleMsgFormid(data) {
-    return request('/template-msg/wxa/formId', true, 'post', data);
+  addTempleMsgFormid: function addTempleMsgFormid(token, type, formId) {
+    return request('/template-msg/wxa/formId', true, 'post', {
+      token: token, type: type, formId: formId
+    });
   },
   sendTempleMsg: function sendTempleMsg(data) {
     return request('/template-msg/put', true, 'post', data);
@@ -377,6 +379,11 @@ module.exports = {
   },
   sendCoupons: function sendCoupons(data) {
     return request('/discounts/send', true, 'post', data);
+  },
+  exchangeCoupons: function exchangeCoupons(token, number, pwd) {
+    return request('/discounts/exchange', true, 'post', {
+      token: token, number: number, pwd: pwd
+    });
   },
   noticeList: function noticeList(data) {
     return request('/notice/list', true, 'post', data);
@@ -875,6 +882,66 @@ module.exports = {
   },
   scoreDeductionRules: function scoreDeductionRules() {
     return request('/score/deduction/rules', true, 'get', {});
+  },
+  voteItems: function voteItems(data) {
+    return request('/vote/items', true, 'post', data);
+  },
+  voteItemDetail: function voteItemDetail(id) {
+    return request('/vote/info', true, 'get', { id: id });
+  },
+  vote: function vote(token, voteId, items, remark) {
+    return request('/vote/vote', true, 'post', {
+      token: token, voteId: voteId,
+      items: items.join(),
+      remark: remark
+    });
+  },
+  myVote: function myVote(token, voteId) {
+    return request('/vote/vote/info', true, 'get', {
+      token: token, voteId: voteId
+    });
+  },
+  voteLogs: function voteLogs(data) {
+    return request('/vote/vote/list', true, 'post', data);
+  },
+  yuyueItems: function yuyueItems(data) {
+    return request('/yuyue/items', true, 'post', data);
+  },
+  yuyueItemDetail: function yuyueItemDetail(id) {
+    return request('/yuyue/info', true, 'get', { id: id });
+  },
+  yuyueJoin: function yuyueJoin(data) {
+    return request('/yuyue/join', true, 'post', data);
+  },
+  yuyueJoinPay: function yuyueJoinPay(token, joinId) {
+    return request('/yuyue/pay', true, 'post', {
+      token: token, joinId: joinId
+    });
+  },
+  yuyueJoinUpdate: function yuyueJoinUpdate(token, joinId, extJsonStr) {
+    return request('/yuyue/join/update', true, 'post', {
+      token: token, joinId: joinId, extJsonStr: extJsonStr
+    });
+  },
+  yuyueMyJoinInfo: function yuyueMyJoinInfo(token, joinId) {
+    return request('/yuyue/join/info', true, 'post', {
+      token: token, joinId: joinId
+    });
+  },
+  yuyueMyJoinLogs: function yuyueMyJoinLogs(data) {
+    return request('/yuyue/join/list', true, 'post', data);
+  },
+  yuyueTeams: function yuyueTeams(data) {
+    return request('/yuyue/info/teams', true, 'post', data);
+  },
+  yuyueTeamDetail: function yuyueTeamDetail(teamId) {
+    return request('/yuyue/info/team', true, 'get', { teamId: teamId });
+  },
+  yuyueTeamMembers: function yuyueTeamMembers(data) {
+    return request('/yuyue/info/team/members', true, 'post', data);
+  },
+  yuyueTeamDeleteMember: function yuyueTeamDeleteMember(token, joinId) {
+    return request('/yuyue/info/team/members/del', true, 'post', data);
   }
 };
 

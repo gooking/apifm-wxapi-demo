@@ -34,7 +34,8 @@
     "pages/modifyUserInfo/index",
     "pages/shipping-address/list",
     "pages/shipping-address/add",
-    "pages/sign/index"
+    "pages/sign/index",
+    "pages/exchange-coupon/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
