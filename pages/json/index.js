@@ -2,8 +2,9 @@ const WXAPI = require('apifm-wxapi')
 
 Page({
   data: {
-    inputvalue: undefined,
-    jsonList: undefined,
+    autosize: {
+      minHeight: 100
+    },
   },
   onLoad: function (options) {
 
@@ -29,27 +30,24 @@ Page({
       this.goRegist()
       return
     }
-    WXAPI.jsonList({
+    // https://www.yuque.com/apifm/nu0f75/nhvz4t
+    WXAPI.jsonListV3({
       token: loginToken.token,
       type: 'apifm-wxapi-test'
     }).then(res => {
       console.log(res)
       if (res.code == 0) {
         this.setData({
-          jsonList: res.data
+          jsonList: res.data.result
         })
       } else {
         this.setData({
           jsonList: null
         })
-        wx.showToast({
-          title: res.msg,
-          icon: 'none'
-        })
       }
     })
   },
-  jsonSet() {
+  async jsonSetV2() {
     const loginToken = wx.getStorageSync('loginToken')
     if (!loginToken) {
       wx.showToast({
@@ -59,46 +57,65 @@ Page({
       this.goRegist()
       return
     }
-    if (!this.data.inputvalue) {
+    if (!this.data.content) {
       wx.showToast({
         title: '内容不能为空',
         icon: 'none'
       })
       return
     }
-    WXAPI.jsonSet({
+    // https://www.yuque.com/apifm/nu0f75/opaysd
+    const content = {
+      msg: this.data.content
+    }
+    wx.showLoading({
+      title: '',
+    })
+    const res = await WXAPI.jsonSetV2({
       type: 'apifm-wxapi-test',
       token: loginToken.token,
-      content: '{"msg": "' + this.data.inputvalue +'"}'
-    }).then(res => {
-      console.log(res)
-      if (res.code == 0) {
-        wx.showToast({
-          title: '添加成功',
-          icon: 'success'
-        })
-        this.setData({
-          inputvalue: null
-        })
-        this.jsonList()
-      } else {
-        wx.showToast({
-          title: res.msg,
-          icon: 'none'
-        })
-      }
+      content: JSON.stringify(content)
     })
+    wx.hideLoading()
+    if (res.code == 0) {
+      wx.showToast({
+        title: '添加成功',
+        icon: 'success'
+      })
+      this.setData({
+        inputvalue: null
+      })
+      this.jsonList()
+    } else {
+      wx.showToast({
+        title: res.msg,
+        icon: 'none'
+      })
+    }
   },
-  jsonDelete(e){
+  async jsonDeleteV2(e){
     const loginToken = wx.getStorageSync('loginToken')
     const id = e.currentTarget.dataset.id
-    WXAPI.jsonDelete(loginToken.token, id).then(res => {
-      console.log(res)
+    // https://www.yuque.com/apifm/nu0f75/dnqebx
+    wx.showLoading({
+      title: '',
+    })
+    const res = await WXAPI.jsonDeleteV2({
+      token: loginToken.token,
+      id
+    })
+    wx.hideLoading()
+    if (res.code == 0) {
       wx.showToast({
         title: '删除成功',
         icon: 'success'
       })
       this.jsonList()
-    })
+    } else {
+      wx.showToast({
+        title: res.msg,
+        icon: 'none'
+      })
+    }
   }
 })

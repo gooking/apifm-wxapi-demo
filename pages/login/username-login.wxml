@@ -1,0 +1,20 @@
+<van-field
+  model:value="{{ username }}"
+  required
+  clearable
+  label="用户名"
+  size="large"
+  placeholder="请输入用户名"
+/>
+<van-field
+  model:value="{{ pwd }}"
+  required
+  clearable
+  label="密码"
+  size="large"
+  placeholder="请输入密码"
+  password
+/>
+<view class="btn-box">
+  <van-button type="primary" block bind:click="login_username">登陆</van-button>
+</view>
